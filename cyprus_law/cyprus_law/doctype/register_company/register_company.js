@@ -10,7 +10,8 @@ frappe.ui.form.on("Register Company", {
                 doctype: "Related Person",
                 filters: [
                     ["register_company", "=", frm.doc.name],
-                    ["disabled", "=", 0]
+                    ["disabled", "=", 0],
+                    ["role", "in", ["Director", "Secretary"]]
                 ],
                 fields: ["name", "person_name", "role"],
                 limit_page_length: 20
