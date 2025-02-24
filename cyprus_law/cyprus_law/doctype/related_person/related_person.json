@@ -7,8 +7,9 @@
  "engine": "InnoDB",
  "field_order": [
   "section_1",
-  "person_name",
   "naming_series",
+  "person_name",
+  "disabled",
   "column_break_dwtd",
   "type",
   "holding_",
@@ -296,11 +297,17 @@
    "hidden": 1,
    "label": "Naming Series",
    "options": "RP-.YYYY.-"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-24 08:23:29.485429",
+ "modified": "2025-02-24 08:35:47.140094",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Related Person",

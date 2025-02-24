@@ -10,8 +10,8 @@
   "company_name",
   "naming_series",
   "column_break_livp",
-  "status",
   "customer",
+  "disabled",
   "section_break_weyu",
   "proposed_activities",
   "tab_2_tab",
@@ -66,8 +66,6 @@
   {
    "fieldname": "customer",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Customer",
    "options": "Customer"
   },
@@ -324,14 +322,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Status",
-   "options": "Pending\nCompleted\nCancelled"
-  },
-  {
    "fetch_from": "company.company_name",
    "fetch_if_empty": 1,
    "fieldname": "implemented_from",
@@ -353,11 +343,18 @@
    "hidden": 1,
    "label": "Naming Series",
    "options": "RG-.YYYY.-"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Disabled"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-24 08:18:18.870849",
+ "modified": "2025-02-24 08:34:37.356737",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Register Company",
@@ -379,5 +376,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

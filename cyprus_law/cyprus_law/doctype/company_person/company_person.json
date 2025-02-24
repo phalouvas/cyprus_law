@@ -7,15 +7,20 @@
  "engine": "InnoDB",
  "field_order": [
   "related_person",
-  "full_name"
+  "full_name",
+  "column_break_ubxp",
+  "type",
+  "disabled"
  ],
  "fields": [
   {
    "fieldname": "related_person",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Related Person",
-   "options": "Related Person"
+   "options": "Related Person",
+   "print_hide": 1
   },
   {
    "fetch_from": "related_person.person_name",
@@ -23,12 +28,32 @@
    "fieldtype": "Read Only",
    "in_list_view": 1,
    "label": "Full Name"
+  },
+  {
+   "fieldname": "column_break_ubxp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "related_person.type",
+   "fieldname": "type",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Type"
+  },
+  {
+   "default": "0",
+   "fetch_from": "related_person.disabled",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Disabled",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-02-24 08:11:23.817841",
+ "modified": "2025-02-24 08:40:28.668485",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Company Person",
