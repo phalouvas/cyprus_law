@@ -12,7 +12,7 @@
   "register_company",
   "disabled",
   "column_break_dwtd",
-  "type",
+  "role",
   "holding_",
   "address_contacts",
   "address_html",
@@ -114,14 +114,6 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Full Name",
-   "reqd": 1
-  },
-  {
-   "fieldname": "type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Type",
-   "options": "\nDirector\nSecretary\nShareholder\nUltimate Beneficial Owner",
    "reqd": 1
   },
   {
@@ -313,11 +305,19 @@
    "label": "Register Company",
    "options": "Register Company",
    "reqd": 1
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Role",
+   "options": "\nDirector\nSecretary\nShareholder\nUltimate Beneficial Owner",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-24 08:50:35.059035",
+ "modified": "2025-02-24 09:14:16.289091",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Related Person",

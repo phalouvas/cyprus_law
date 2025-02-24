@@ -12,14 +12,14 @@ frappe.ui.form.on("Register Company", {
                     ["register_company", "=", frm.doc.name],
                     ["disabled", "=", 0]
                 ],
-                fields: ["name", "person_name", "type"],
+                fields: ["name", "person_name", "role"],
                 limit_page_length: 20
             },
             callback: function(r) {
                 if (r.message) {
-                    let html = "<table class='table table-bordered'><tr><th>Name</th><th>Type</th></tr>";
+                    let html = "<table class='table table-bordered'><tr><th>Name</th><th>Role</th></tr>";
                     r.message.forEach(function(row) {
-                        html += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td><td>${row.type || ""}</td></tr>`;
+                        html += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td><td>${row.role || ""}</td></tr>`;
                     });
                     html += "</table>";
                     frm.set_df_property("company_structure_html", "options", html);

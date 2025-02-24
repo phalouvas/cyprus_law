@@ -29,7 +29,7 @@
   "issued_currency",
   "issued_par_value",
   "section_break_sswf",
-  "shareholders",
+  "company_shareholders",
   "ultimate_beneficial_owners",
   "section_break_bobx",
   "source_wealth",
@@ -166,18 +166,6 @@
   {
    "fieldname": "section_break_sswf",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "shareholders",
-   "fieldtype": "Table",
-   "label": "Company\u2019s Shareholder(s) ",
-   "options": "Company Person"
-  },
-  {
-   "fieldname": "ultimate_beneficial_owners",
-   "fieldtype": "Table",
-   "label": "Ultimate Beneficial Owner(s)",
-   "options": "Company Person"
   },
   {
    "depends_on": "eval:doc.__islocal != true",
@@ -349,6 +337,16 @@
    "fieldname": "company_structure_html",
    "fieldtype": "HTML",
    "label": "Company Structure"
+  },
+  {
+   "fieldname": "company_shareholders",
+   "fieldtype": "HTML",
+   "label": "Company\u2019s Shareholder(s)"
+  },
+  {
+   "fieldname": "ultimate_beneficial_owners",
+   "fieldtype": "HTML",
+   "label": "Ultimate Beneficial Owner(s)"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -359,7 +357,7 @@
    "table_fieldname": "tab_2_tab"
   }
  ],
- "modified": "2025-02-24 09:07:14.559161",
+ "modified": "2025-02-24 09:18:26.127060",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Register Company",
