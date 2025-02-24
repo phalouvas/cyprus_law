@@ -57,19 +57,33 @@ frappe.ui.form.on("Corporate Register", {
                     corporateDirectorsHtml += `<thead>
                         <tr>
                             <th>Full Name</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
+                            <th>Nationality</th>
+                            <th>Address</th>
+                            <th>Occupation</th>
+                            <th>Date of Birth</th>
+                            <th>ID Number</th>
+                            <th>Alternate Of</th>
+                            <th>Appointed</th>
+                            <th>Resigned</th>
+                            <th>Birthplace</th>
                         </tr>
                     </thead>`;
                     r.message.forEach(function(row) {
                         corporateDirectorsHtml += `<tr>
                             <td><a href="/app/corporate-director/${row.name}">${row.full_name || ""}</a></td>
-                            <td>${row.start_date || ""}</td>
-                            <td>${row.end_date || ""}</td>
+                            <td>${row.nationality || ""}</td>
+                            <td>${row.address || ""}</td>
+                            <td>${row.occupation || ""}</td>
+                            <td>${row.dob || ""}</td>
+                            <td>${row.id_number || ""}</td>
+                            <td>${row.alternate_of || ""}</td>
+                            <td>${row.appointed || ""}</td>
+                            <td>${row.resigned || ""}</td>
+                            <td>${row.birthplace || ""}</td>
                         </tr>`;
                     });
                     corporateDirectorsHtml += "</table>";
-                    frm.set_df_property("corporate_directors_html", "options", corporateDirectorsHtml);
+                    frm.set_df_property("directors_html", "options", corporateDirectorsHtml);
                 }
             }
         });

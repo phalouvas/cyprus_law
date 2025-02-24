@@ -16,7 +16,7 @@
   "notes",
   "registered_offices_tab",
   "registered_offices_html",
-  "directors_tab",
+  "corporate_directors_html",
   "directors_html"
  ],
  "fields": [
@@ -74,13 +74,13 @@
    "fieldtype": "HTML"
   },
   {
-   "fieldname": "directors_tab",
-   "fieldtype": "Tab Break",
-   "label": "Directors"
-  },
-  {
    "fieldname": "directors_html",
    "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "corporate_directors_html",
+   "fieldtype": "Tab Break",
+   "label": "Directors"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -94,7 +94,7 @@
    "link_fieldname": "corporate_register"
   }
  ],
- "modified": "2025-02-24 17:37:59.447464",
+ "modified": "2025-02-24 17:45:52.824320",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Corporate Register",
