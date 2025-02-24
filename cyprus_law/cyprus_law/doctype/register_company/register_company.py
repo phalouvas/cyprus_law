@@ -3,7 +3,17 @@
 
 # import frappe
 from frappe.model.document import Document
-
+from frappe.contacts.address_and_contact import (
+	delete_contact_and_address,
+	load_address_and_contact,
+)
 
 class RegisterCompany(Document):
-	pass
+	
+	
+	def onload(self):
+		"""Load address and contacts in `__onload`"""
+		load_address_and_contact(self)
+
+	def on_trash(self):
+		delete_contact_and_address("Related Person", self.name)

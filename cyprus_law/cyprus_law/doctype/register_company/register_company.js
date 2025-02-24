@@ -3,6 +3,16 @@
 
 frappe.ui.form.on("Register Company", {
     refresh(frm) {
+
+        //setup address
+        if (frm.doc.__islocal) {
+			hide_field(["address_html", "registered_offices_section"]);
+			frappe.contacts.clear_address_and_contact(frm);
+		} else {
+			unhide_field(["address_html", "registered_offices_section"]);
+			frappe.contacts.render_address_and_contact(frm);
+		}
+
         // Fetch related persons dynamically
         frappe.call({
             method: "frappe.client.get_list",
@@ -17,13 +27,17 @@ frappe.ui.form.on("Register Company", {
             },
             callback: function(r) {
                 if (r.message) {
-                    let companyStructureHtml = "<table class='table table-bordered'>";
+                    let directorsHtml = "<table class='table table-bordered'>";
+                    let secretariesHtml = "<table class='table table-bordered'>";
                     let companyShareholdersHtml = "<table class='table table-bordered'>";
                     let ultimateBeneficialOwnersHtml = "<table class='table table-bordered'>";
 
                     r.message.forEach(function(row) {
-                        if (["Director", "Secretary"].includes(row.role)) {
-                            companyStructureHtml += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td><td>${row.role || ""}</td></tr>`;
+                        if (row.role === "Director") {
+                            directorsHtml += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td><td>${row.role || ""}</td></tr>`;
+                        }
+                        if (row.role === "Secretary") {
+                            secretariesHtml += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td><td>${row.role || ""}</td></tr>`;
                         }
                         if (row.role === "Shareholder") {
                             companyShareholdersHtml += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td></tr>`;
@@ -33,11 +47,13 @@ frappe.ui.form.on("Register Company", {
                         }
                     });
 
-                    companyStructureHtml += "</table>";
+                    directorsHtml += "</table>";
+                    secretariesHtml += "</table>";
                     companyShareholdersHtml += "</table>";
                     ultimateBeneficialOwnersHtml += "</table>";
 
-                    frm.set_df_property("company_structure_html", "options", companyStructureHtml);
+                    frm.set_df_property("directors_html", "options", directorsHtml);
+                    frm.set_df_property("secretaries_html", "options", secretariesHtml);
                     frm.set_df_property("company_shareholders_html", "options", companyShareholdersHtml);
                     frm.set_df_property("ultimate_beneficial_owners_html", "options", ultimateBeneficialOwnersHtml);
                 }

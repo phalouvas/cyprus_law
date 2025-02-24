@@ -6,18 +6,25 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "details_tab",
   "section_1",
   "company_name",
   "naming_series",
+  "jurisdiction",
   "column_break_livp",
-  "customer",
   "disabled",
+  "customer",
+  "registration_number",
+  "registration_date",
+  "registered_offices_section",
+  "address_html",
   "section_break_weyu",
   "proposed_activities",
+  "directors_tab",
+  "directors_html",
+  "secretaries_tab",
+  "secretaries_html",
   "tab_2_tab",
-  "section_2",
-  "company_structure_html",
-  "registered_office",
   "section_3",
   "authorized_share_capital",
   "autorized_no",
@@ -88,24 +95,12 @@
    "description": "(Please provide a detailed description of the nature of your proposed business activities, including details of \ngoods and services you will trade/provide. Generic descriptions like Trading, Investments, Consultancy \nServices, Agent, Real Estate etc. are not acceptable.) ",
    "fieldname": "proposed_activities",
    "fieldtype": "Text Editor",
-   "label": "Proposed Activities",
-   "reqd": 1
-  },
-  {
-   "fieldname": "section_2",
-   "fieldtype": "Section Break",
-   "label": "Company's Structure"
-  },
-  {
-   "fieldname": "registered_office",
-   "fieldtype": "Small Text",
-   "label": "Registered Office"
+   "label": "Proposed Activities"
   },
   {
    "fieldname": "tab_2_tab",
    "fieldtype": "Tab Break",
-   "label": "Company's Structure",
-   "show_dashboard": 1
+   "label": "Company's Structure"
   },
   {
    "description": "(Authorised capital may be stated in any \ncurrency) ",
@@ -336,11 +331,6 @@
    "label": "Disabled"
   },
   {
-   "fieldname": "company_structure_html",
-   "fieldtype": "HTML",
-   "label": "Company Structure"
-  },
-  {
    "fieldname": "company_shareholders_html",
    "fieldtype": "HTML",
    "label": "Company\u2019s Shareholder(s)"
@@ -354,6 +344,59 @@
    "fieldname": "section_break_ubo",
    "fieldtype": "Section Break",
    "label": "Ultimate Beneficial Owner(s)"
+  },
+  {
+   "fieldname": "jurisdiction",
+   "fieldtype": "Link",
+   "label": "Jurisdiction",
+   "options": "Country"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number"
+  },
+  {
+   "fieldname": "registration_date",
+   "fieldtype": "Date",
+   "label": "Registration Date"
+  },
+  {
+   "fieldname": "registered_offices_section",
+   "fieldtype": "Section Break",
+   "label": "Registered Offices"
+  },
+  {
+   "depends_on": "eval: !doc.__islocal",
+   "fieldname": "address_html",
+   "fieldtype": "HTML",
+   "label": "Address HTML"
+  },
+  {
+   "fieldname": "directors_tab",
+   "fieldtype": "Tab Break",
+   "label": "Directors"
+  },
+  {
+   "fieldname": "directors_html",
+   "fieldtype": "HTML",
+   "label": "Directors"
+  },
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details",
+   "show_dashboard": 1
+  },
+  {
+   "fieldname": "secretaries_tab",
+   "fieldtype": "Tab Break",
+   "label": "Secretaries"
+  },
+  {
+   "fieldname": "secretaries_html",
+   "fieldtype": "HTML",
+   "label": "Secretaries"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -364,7 +407,7 @@
    "table_fieldname": "tab_2_tab"
   }
  ],
- "modified": "2025-02-24 09:29:43.237683",
+ "modified": "2025-02-24 14:47:21.562897",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Register Company",
