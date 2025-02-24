@@ -18,8 +18,19 @@ frappe.ui.form.on("Corporate Register", {
             callback: function(r) {
                 if (r.message) {
                     let registeredOfficesHtml = "<table class='table table-bordered'>";
+                    registeredOfficesHtml += `<thead>
+                        <tr>
+                            <th>Address</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                        </tr>
+                    </thead>`;
                     r.message.forEach(function(row) {
-                        registeredOfficesHtml += `<tr><td><a href="/app/registered-office/${row.name}">${row.address || ""}</a></td></tr>`;
+                        registeredOfficesHtml += `<tr>
+                            <td><a href="/app/registered-office/${row.name}">${row.address || ""}</a></td>
+                            <td>${row.start_date || ""}</td>
+                            <td>${row.end_date || ""}</td>
+                        </tr>`;
                     });
                     registeredOfficesHtml += "</table>";
                     frm.set_df_property("registered_offices_html", "options", registeredOfficesHtml);
