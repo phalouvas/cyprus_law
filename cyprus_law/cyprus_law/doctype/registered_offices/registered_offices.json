@@ -7,13 +7,19 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
+  "disabled",
   "corporate_register",
-  "address_html"
+  "address_and_po_box",
+  "section_break_ehar",
+  "start_date",
+  "column_break_amfy",
+  "end_date"
  ],
  "fields": [
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Naming Series",
    "options": "RO-.YYYY."
   },
@@ -26,15 +32,38 @@
    "reqd": 1
   },
   {
-   "depends_on": "eval: !doc.__islocal",
-   "fieldname": "address_html",
-   "fieldtype": "HTML",
-   "label": "Address HTML"
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "section_break_ehar",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_amfy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "address_and_po_box",
+   "fieldtype": "Text Editor",
+   "label": "Address and P.O. Box"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-24 15:21:11.061450",
+ "modified": "2025-02-24 17:10:39.332474",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Registered Offices",
@@ -55,7 +84,9 @@
   }
  ],
  "search_fields": "corporate_register",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "corporate_register"
 }

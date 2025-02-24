@@ -7,13 +7,15 @@
  "engine": "InnoDB",
  "field_order": [
   "details_section",
+  "corporate_name",
   "jurisdiction",
   "column_break_kmqc",
   "registration_number",
-  "column_break_ljpp",
   "registration_date",
   "section_break_xzdq",
-  "notes"
+  "notes",
+  "registered_offices_tab",
+  "registered_offices_html"
  ],
  "fields": [
   {
@@ -43,7 +45,7 @@
   },
   {
    "fieldname": "notes",
-   "fieldtype": "Small Text",
+   "fieldtype": "Text Editor",
    "label": "Notes"
   },
   {
@@ -51,12 +53,23 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_ljpp",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "section_break_xzdq",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "corporate_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "registered_offices_tab",
+   "fieldtype": "Tab Break",
+   "label": "Registered Offices"
+  },
+  {
+   "fieldname": "registered_offices_html",
+   "fieldtype": "HTML"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -66,7 +79,7 @@
    "link_fieldname": "corporate_register"
   }
  ],
- "modified": "2025-02-24 15:21:41.521766",
+ "modified": "2025-02-24 17:17:31.512285",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Corporate Register",
@@ -86,7 +99,10 @@
    "write": 1
   }
  ],
+ "search_fields": "corporate_name",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "corporate_name"
 }
