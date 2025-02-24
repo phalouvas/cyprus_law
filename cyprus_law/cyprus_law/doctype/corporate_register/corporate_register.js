@@ -12,7 +12,7 @@ frappe.ui.form.on("Corporate Register", {
                     ["corporate_register", "=", frm.doc.name],
                     ["disabled", "=", 0]
                 ],
-                fields: ["name", "address", "address_html"],
+                fields: ["name", "address", "start_date", "end_date"],
                 limit_page_length: 20
             },
             callback: function(r) {

@@ -9,7 +9,7 @@
   "naming_series",
   "disabled",
   "corporate_register",
-  "address_and_po_box",
+  "address",
   "section_break_ehar",
   "start_date",
   "column_break_amfy",
@@ -56,17 +56,17 @@
    "label": "End Date"
   },
   {
-   "fieldname": "address_and_po_box",
+   "fieldname": "address",
    "fieldtype": "Text Editor",
    "label": "Address and P.O. Box"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-24 17:10:39.332474",
+ "modified": "2025-02-24 17:18:38.628881",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
- "name": "Registered Offices",
+ "name": "Registered Office",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [

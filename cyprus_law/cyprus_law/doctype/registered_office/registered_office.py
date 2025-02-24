@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class RegisteredOffices(Document):
+class RegisteredOffice(Document):
 	pass
