@@ -17,9 +17,9 @@ frappe.ui.form.on("Register Company", {
             },
             callback: function(r) {
                 if (r.message) {
-                    let html = "<table class='table table-bordered'><tr><th>ID</th><th>Name</th><th>Type</th></tr>";
+                    let html = "<table class='table table-bordered'><tr><th>Name</th><th>Type</th></tr>";
                     r.message.forEach(function(row) {
-                        html += `<tr><td>${row.name}</td><td>${row.person_name}</td><td>${row.type || ""}</td></tr>`;
+                        html += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td><td>${row.type || ""}</td></tr>`;
                     });
                     html += "</table>";
                     frm.set_df_property("company_structure_html", "options", html);
