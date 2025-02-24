@@ -17,19 +17,19 @@ frappe.ui.form.on("Register Company", {
             },
             callback: function(r) {
                 if (r.message) {
-                    let companyStructureHtml = "<table class='table table-bordered'><tr><th>Name</th><th>Role</th></tr>";
-                    let companyShareholdersHtml = "<table class='table table-bordered'><tr><th>Name</th><th>Role</th></tr>";
-                    let ultimateBeneficialOwnersHtml = "<table class='table table-bordered'><tr><th>Name</th><th>Role</th></tr>";
+                    let companyStructureHtml = "<table class='table table-bordered'>";
+                    let companyShareholdersHtml = "<table class='table table-bordered'>";
+                    let ultimateBeneficialOwnersHtml = "<table class='table table-bordered'>";
 
                     r.message.forEach(function(row) {
                         if (["Director", "Secretary"].includes(row.role)) {
                             companyStructureHtml += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td><td>${row.role || ""}</td></tr>`;
                         }
                         if (row.role === "Shareholder") {
-                            companyShareholdersHtml += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td><td>${row.role || ""}</td></tr>`;
+                            companyShareholdersHtml += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td></tr>`;
                         }
                         if (row.role === "Ultimate Beneficial Owner") {
-                            ultimateBeneficialOwnersHtml += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td><td>${row.role || ""}</td></tr>`;
+                            ultimateBeneficialOwnersHtml += `<tr><td><a href="/app/related-person/${row.name}">${row.person_name}</a></td></tr>`;
                         }
                     });
 
