@@ -1,0 +1,31 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-24 08:04:57.637074",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "related_person"
+ ],
+ "fields": [
+  {
+   "fieldname": "related_person",
+   "fieldtype": "Link",
+   "label": "Related Person",
+   "options": "Related Person"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-24 08:05:40.516136",
+ "modified_by": "Administrator",
+ "module": "Cyprus Law",
+ "name": "Company Person",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
