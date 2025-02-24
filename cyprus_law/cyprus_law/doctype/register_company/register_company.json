@@ -16,7 +16,7 @@
   "proposed_activities",
   "tab_2_tab",
   "section_2",
-  "company_structure",
+  "company_structure_html",
   "registered_office",
   "section_3",
   "authorized_share_capital",
@@ -91,13 +91,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "company_structure",
-   "fieldtype": "Table",
-   "label": "Company Structure",
-   "options": "Company Person"
-  },
-  {
-   "description": "Please give full details of all directors and the secretary appointed by you and provide us with \npassport copies and utility bills. State both the person's passport, identity card and alien\u2019s registration number (where applicable), if \nthe director is a physical person.",
    "fieldname": "section_2",
    "fieldtype": "Section Break",
    "label": "Company's Structure"
@@ -110,7 +103,8 @@
   {
    "fieldname": "tab_2_tab",
    "fieldtype": "Tab Break",
-   "label": "Company's Structure"
+   "label": "Company's Structure",
+   "show_dashboard": 1
   },
   {
    "description": "(Authorised capital may be stated in any \ncurrency) ",
@@ -350,6 +344,11 @@
    "fieldtype": "Check",
    "in_list_view": 1,
    "label": "Disabled"
+  },
+  {
+   "fieldname": "company_structure_html",
+   "fieldtype": "HTML",
+   "label": "Company Structure"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -360,7 +359,7 @@
    "table_fieldname": "tab_2_tab"
   }
  ],
- "modified": "2025-02-24 08:50:01.537934",
+ "modified": "2025-02-24 09:07:14.559161",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Register Company",
