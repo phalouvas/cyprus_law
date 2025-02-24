@@ -1,13 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{person_name}-{#####}",
+ "autoname": "naming_series:",
  "creation": "2025-02-24 07:49:21.903103",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_1",
   "person_name",
+  "naming_series",
   "column_break_dwtd",
   "type",
   "holding_",
@@ -109,6 +110,7 @@
    "fieldname": "person_name",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Full Name",
    "reqd": 1
   },
@@ -287,15 +289,22 @@
    "fieldtype": "HTML",
    "label": "Contact HTML",
    "read_only": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "RP-.YYYY.-"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-24 07:58:03.993674",
+ "modified": "2025-02-24 08:23:29.485429",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Related Person",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
@@ -311,6 +320,7 @@
    "write": 1
   }
  ],
+ "search_fields": "person_name",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
