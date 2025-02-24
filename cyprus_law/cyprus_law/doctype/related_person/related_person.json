@@ -9,6 +9,7 @@
   "section_1",
   "naming_series",
   "person_name",
+  "register_company",
   "disabled",
   "column_break_dwtd",
   "type",
@@ -303,11 +304,20 @@
    "fieldname": "disabled",
    "fieldtype": "Check",
    "label": "Disabled"
+  },
+  {
+   "fieldname": "register_company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Register Company",
+   "options": "Register Company",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-24 08:35:47.140094",
+ "modified": "2025-02-24 08:50:35.059035",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Related Person",
@@ -328,7 +338,9 @@
   }
  ],
  "search_fields": "person_name",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "person_name"
 }

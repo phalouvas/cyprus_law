@@ -353,8 +353,14 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-02-24 08:34:37.356737",
+ "links": [
+  {
+   "link_doctype": "Related Person",
+   "link_fieldname": "register_company",
+   "table_fieldname": "tab_2_tab"
+  }
+ ],
+ "modified": "2025-02-24 08:50:01.537934",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Register Company",
@@ -374,8 +380,11 @@
    "write": 1
   }
  ],
+ "search_fields": "company_name",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "company_name",
  "track_changes": 1
 }
