@@ -1,0 +1,212 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-02-25 07:44:14.147678",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "trade_date",
+  "dns_from_no",
+  "dns_to_no",
+  "no_of_shares",
+  "column_break_tpbx",
+  "type",
+  "corporate_register",
+  "from_shareholder",
+  "from_shareholder_name",
+  "to_shareholder",
+  "to_shareholder_name",
+  "disabled",
+  "section_break_xdnp",
+  "nominal_value",
+  "column_break_phqn",
+  "premium_value",
+  "column_break_oqxs",
+  "discount_value",
+  "column_break_zybe",
+  "total_value",
+  "section_break_yylx",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "CST-.YYYY.-"
+  },
+  {
+   "fieldname": "corporate_register",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Corporate Register",
+   "options": "Corporate Register",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_tpbx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_yylx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "trade_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "\nIssue\nPurchase\nTransfer",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.corporate_register && (doc.type === 'Purchase' || doc.type === 'Transfer') ? true : false",
+   "fieldname": "from_shareholder",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "From Shareholder",
+   "mandatory_depends_on": "eval:doc.corporate_register && (doc.type === 'Purchase' || doc.type === 'Transfer') ? true : false",
+   "options": "Corporate Shareholder"
+  },
+  {
+   "depends_on": "eval:doc.corporate_register && (doc.type === 'Issue' || doc.type === 'Transfer') ? true : false",
+   "fieldname": "to_shareholder",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "To Shareholder",
+   "mandatory_depends_on": "eval:doc.corporate_register && (doc.type === 'Issue' || doc.type === 'Transfer') ? true : false",
+   "options": "Corporate Shareholder"
+  },
+  {
+   "fieldname": "dns_from_no",
+   "fieldtype": "Int",
+   "label": "DNS From No",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "dns_to_no",
+   "fieldtype": "Int",
+   "label": "DNS To No",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "no_of_shares",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No of Shares",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "section_break_xdnp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "nominal_value",
+   "fieldtype": "Currency",
+   "label": "Nominal Value",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_phqn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "premium_value",
+   "fieldtype": "Currency",
+   "label": "Premium Value",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_oqxs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_value",
+   "fieldtype": "Currency",
+   "label": "Discount Value",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zybe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_value",
+   "fieldtype": "Currency",
+   "label": "Total Value",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fetch_from": "from_shareholder.full_name",
+   "fieldname": "from_shareholder_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "From Shareholder Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "to_shareholder.full_name",
+   "fieldname": "to_shareholder_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "To Shareholder Name",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-25 09:06:03.363093",
+ "modified_by": "Administrator",
+ "module": "Cyprus Law",
+ "name": "Corporate Share Trade",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

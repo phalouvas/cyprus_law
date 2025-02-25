@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:registration_number",
+ "creation": "2025-02-24 15:12:05.375359",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "corporate_name",
+  "jurisdiction",
+  "column_break_kmqc",
+  "registration_number",
+  "registration_date",
+  "disabled",
+  "section_break_xzdq",
+  "notes",
+  "registered_offices_tab",
+  "registered_offices_html",
+  "corporate_directors_html",
+  "directors_html",
+  "secretaries_tab",
+  "secretaries_html",
+  "members_and_share_ledger_tab",
+  "shareholders_html",
+  "shares_ledger_tab",
+  "shares_html"
+ ],
+ "fields": [
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Registration Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "registration_date",
+   "fieldtype": "Date",
+   "label": "Registration Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "jurisdiction",
+   "fieldtype": "Link",
+   "label": "Jurisdiction",
+   "options": "Country"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "column_break_kmqc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xzdq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "corporate_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "registered_offices_tab",
+   "fieldtype": "Tab Break",
+   "label": "Registered Offices"
+  },
+  {
+   "fieldname": "registered_offices_html",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "directors_html",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "corporate_directors_html",
+   "fieldtype": "Tab Break",
+   "label": "Directors"
+  },
+  {
+   "fieldname": "secretaries_tab",
+   "fieldtype": "Tab Break",
+   "label": "Secretaries"
+  },
+  {
+   "fieldname": "secretaries_html",
+   "fieldtype": "HTML"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "members_and_share_ledger_tab",
+   "fieldtype": "Tab Break",
+   "label": "Shareholders"
+  },
+  {
+   "fieldname": "shareholders_html",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "shares_ledger_tab",
+   "fieldtype": "Tab Break",
+   "label": "Shares Ledger"
+  },
+  {
+   "fieldname": "shares_html",
+   "fieldtype": "HTML"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Registered Office",
+   "link_fieldname": "corporate_register"
+  },
+  {
+   "link_doctype": "Corporate Director",
+   "link_fieldname": "corporate_register"
+  },
+  {
+   "link_doctype": "Corporate Secretary",
+   "link_fieldname": "corporate_register"
+  },
+  {
+   "link_doctype": "Corporate Shareholder",
+   "link_fieldname": "corporate_register"
+  },
+  {
+   "link_doctype": "Corporate Share Trade",
+   "link_fieldname": "corporate_register"
+  }
+ ],
+ "modified": "2025-02-25 08:53:02.217819",
+ "modified_by": "Administrator",
+ "module": "Cyprus Law",
+ "name": "Corporate Register",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "corporate_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "corporate_name"
+}

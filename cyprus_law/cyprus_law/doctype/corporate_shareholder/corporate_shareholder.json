@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-02-25 06:40:43.707462",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "corporate_register",
+  "full_name",
+  "class_of_shares",
+  "no_of_shares",
+  "nominal_value",
+  "occupation",
+  "birthplace",
+  "start_date",
+  "end_date",
+  "column_break_eufg",
+  "dob",
+  "id_number",
+  "nationality",
+  "address",
+  "disabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CSH-.YYYY.-"
+  },
+  {
+   "fieldname": "corporate_register",
+   "fieldtype": "Link",
+   "label": "Corporate Register",
+   "options": "Corporate Register",
+   "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "occupation",
+   "fieldtype": "Data",
+   "label": "Occupation"
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "DoB/Reg. ID"
+  },
+  {
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "label": "ID No./Reg. No."
+  },
+  {
+   "fieldname": "birthplace",
+   "fieldtype": "Data",
+   "label": "Birthplace/Incorporation"
+  },
+  {
+   "fieldname": "column_break_eufg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality/ Jurisdiction",
+   "options": "Country"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text Editor",
+   "label": "Address/ Registered Office"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "class_of_shares",
+   "fieldtype": "Data",
+   "label": "Class of Shares"
+  },
+  {
+   "fieldname": "nominal_value",
+   "fieldtype": "Currency",
+   "label": "Nominal Value",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Entered as member"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Ceased to be Member"
+  },
+  {
+   "fieldname": "no_of_shares",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No of Shares",
+   "non_negative": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Transferor",
+   "link_doctype": "Corporate Share Trade",
+   "link_fieldname": "from_shareholder"
+  },
+  {
+   "group": "Transferee",
+   "link_doctype": "Corporate Share Trade",
+   "link_fieldname": "to_shareholder"
+  }
+ ],
+ "modified": "2025-02-25 09:25:00.707944",
+ "modified_by": "Administrator",
+ "module": "Cyprus Law",
+ "name": "Corporate Shareholder",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "full_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name"
+}
