@@ -131,11 +131,11 @@
    "link_fieldname": "corporate_register"
   },
   {
-   "link_doctype": "Allotment",
+   "link_doctype": "Corporate Share Trade",
    "link_fieldname": "corporate_register"
   }
  ],
- "modified": "2025-02-25 07:11:15.107371",
+ "modified": "2025-02-25 08:10:07.888211",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Corporate Register",

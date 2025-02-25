@@ -109,11 +109,17 @@
  "index_web_pages_for_search": 1,
  "links": [
   {
-   "link_doctype": "Allotment",
-   "link_fieldname": "corporate_shareholder"
+   "group": "Transferor",
+   "link_doctype": "Corporate Share Trade",
+   "link_fieldname": "from_shareholder"
+  },
+  {
+   "group": "Transferee",
+   "link_doctype": "Corporate Share Trade",
+   "link_fieldname": "to_shareholder"
   }
  ],
- "modified": "2025-02-25 07:19:02.371824",
+ "modified": "2025-02-25 08:15:09.961899",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Corporate Shareholder",
