@@ -20,7 +20,9 @@
   "corporate_directors_html",
   "directors_html",
   "secretaries_tab",
-  "secretaries_html"
+  "secretaries_html",
+  "members_and_share_ledger_tab",
+  "shareholders_html"
  ],
  "fields": [
   {
@@ -99,6 +101,15 @@
    "fieldname": "disabled",
    "fieldtype": "Check",
    "label": "Disabled"
+  },
+  {
+   "fieldname": "members_and_share_ledger_tab",
+   "fieldtype": "Tab Break",
+   "label": "Members and Share Ledger"
+  },
+  {
+   "fieldname": "shareholders_html",
+   "fieldtype": "HTML"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -114,9 +125,13 @@
   {
    "link_doctype": "Corporate Secretary",
    "link_fieldname": "corporate_register"
+  },
+  {
+   "link_doctype": "Corporate Shareholder",
+   "link_fieldname": "corporate_register"
   }
  ],
- "modified": "2025-02-25 06:38:56.932341",
+ "modified": "2025-02-25 06:56:57.712123",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Corporate Register",

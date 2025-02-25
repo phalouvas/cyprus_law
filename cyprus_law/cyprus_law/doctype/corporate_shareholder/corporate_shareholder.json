@@ -2,23 +2,24 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2025-02-24 17:48:43.789842",
+ "creation": "2025-02-25 06:40:43.707462",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
   "corporate_register",
   "full_name",
+  "class_of_shares",
+  "nominal_value",
   "occupation",
+  "birthplace",
+  "start_date",
+  "end_date",
+  "column_break_eufg",
   "dob",
   "id_number",
-  "alternate_of",
-  "birthplace",
-  "appointed",
-  "column_break_eufg",
   "nationality",
   "address",
-  "resigned",
   "disabled"
  ],
  "fields": [
@@ -26,7 +27,7 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "CSE-.YYYY."
+   "options": "CSH-.YYYY."
   },
   {
    "fieldname": "corporate_register",
@@ -58,19 +59,9 @@
    "label": "ID No./Reg. No."
   },
   {
-   "fieldname": "alternate_of",
-   "fieldtype": "Data",
-   "label": "Alternate of"
-  },
-  {
    "fieldname": "birthplace",
    "fieldtype": "Data",
    "label": "Birthplace/Incorporation"
-  },
-  {
-   "fieldname": "appointed",
-   "fieldtype": "Date",
-   "label": "Appointed"
   },
   {
    "fieldname": "column_break_eufg",
@@ -88,23 +79,39 @@
    "label": "Address/ Registered Office"
   },
   {
-   "fieldname": "resigned",
-   "fieldtype": "Date",
-   "label": "Resigned"
-  },
-  {
    "default": "0",
    "fieldname": "disabled",
    "fieldtype": "Check",
    "label": "Disabled"
+  },
+  {
+   "fieldname": "class_of_shares",
+   "fieldtype": "Data",
+   "label": "Class of shares"
+  },
+  {
+   "fieldname": "nominal_value",
+   "fieldtype": "Currency",
+   "label": "Nominal Value",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Entered as member"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Ceased to be Member"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-25 06:57:54.980652",
+ "modified": "2025-02-25 06:57:41.876074",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
- "name": "Corporate Secretary",
+ "name": "Corporate Shareholder",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
