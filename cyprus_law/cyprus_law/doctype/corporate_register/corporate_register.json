@@ -105,7 +105,7 @@
   {
    "fieldname": "members_and_share_ledger_tab",
    "fieldtype": "Tab Break",
-   "label": "Members and Share Ledger"
+   "label": "Shareholders"
   },
   {
    "fieldname": "shareholders_html",
@@ -135,7 +135,7 @@
    "link_fieldname": "corporate_register"
   }
  ],
- "modified": "2025-02-25 08:10:07.888211",
+ "modified": "2025-02-25 08:37:04.028228",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Corporate Register",

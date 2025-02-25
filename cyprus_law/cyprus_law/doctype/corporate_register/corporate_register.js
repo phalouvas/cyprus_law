@@ -119,7 +119,7 @@ frappe.ui.form.on("Corporate Register", {
                     </thead>`;
                     r.message.forEach(function(row) {
                         corporateSecretariesHtml += `<tr>
-                            <td><a href="/app/corporate-director/${row.name}">${row.full_name || ""}</a></td>
+                            <td><a href="/app/corporate-secretary/${row.name}">${row.full_name || ""}</a></td>
                             <td>${row.nationality || ""}</td>
                             <td>${row.address || ""}</td>
                             <td>${row.occupation || ""}</td>
@@ -133,6 +133,53 @@ frappe.ui.form.on("Corporate Register", {
                     });
                     corporateSecretariesHtml += "</table>";
                     frm.set_df_property("secretaries_html", "options", corporateSecretariesHtml);
+                }
+            }
+        });
+
+        // Fetch corporate shareholders dynamically
+        frappe.call({
+            method: "frappe.client.get_list",
+            args: {
+                doctype: "Corporate Shareholder",
+                filters: [
+                    ["corporate_register", "=", frm.doc.name],
+                    ["disabled", "=", 0]
+                ],
+                fields: ["name", "full_name", "nationality", "address", "occupation", "dob", "id_number", "start_date", "end_date", "class_of_shares", "nominal_value"],
+                limit_page_length: 20
+            },
+            callback: function(r) {
+                if (r.message) {
+                    let corporateShareholdersHtml = "<table class='table table-bordered'>";
+                    corporateShareholdersHtml += `<thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Nationality</th>
+                            <th>Address</th>
+                            <th>Occupation</th>
+                            <th>Class of Shares</th>
+                            <th>ID Number</th>
+                            <th>Entered as Shareholder</th>
+                            <th>Ceased to be Shareholder</th>
+                            <th>Nominal Value</th>
+                        </tr>
+                    </thead>`;
+                    r.message.forEach(function(row) {
+                        corporateShareholdersHtml += `<tr>
+                            <td><a href="/app/corporate-shareholder/${row.name}">${row.full_name || ""}</a></td>
+                            <td>${row.nationality || ""}</td>
+                            <td>${row.address || ""}</td>
+                            <td>${row.occupation || ""}</td>
+                            <td>${row.class_of_shares || ""}</td>
+                            <td>${row.id_number || ""}</td>
+                            <td>${row.start_Date || ""}</td>
+                            <td>${row.end_date || ""}</td>
+                            <td>${row.nominal_value || ""}</td>
+                        </tr>`;
+                    });
+                    corporateShareholdersHtml += "</table>";
+                    frm.set_df_property("shareholders_html", "options", corporateShareholdersHtml);
                 }
             }
         });
