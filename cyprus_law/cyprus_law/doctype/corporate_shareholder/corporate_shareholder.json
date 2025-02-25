@@ -10,6 +10,7 @@
   "corporate_register",
   "full_name",
   "class_of_shares",
+  "no_of_shares",
   "nominal_value",
   "occupation",
   "birthplace",
@@ -87,7 +88,7 @@
   {
    "fieldname": "class_of_shares",
    "fieldtype": "Data",
-   "label": "Class of shares"
+   "label": "Class of Shares"
   },
   {
    "fieldname": "nominal_value",
@@ -104,6 +105,14 @@
    "fieldname": "end_date",
    "fieldtype": "Date",
    "label": "Ceased to be Member"
+  },
+  {
+   "fieldname": "no_of_shares",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No of Shares",
+   "non_negative": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -119,7 +128,7 @@
    "link_fieldname": "to_shareholder"
   }
  ],
- "modified": "2025-02-25 08:15:09.961899",
+ "modified": "2025-02-25 09:25:00.707944",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Corporate Shareholder",

@@ -146,7 +146,7 @@ frappe.ui.form.on("Corporate Register", {
                     ["corporate_register", "=", frm.doc.name],
                     ["disabled", "=", 0]
                 ],
-                fields: ["name", "full_name", "nationality", "address", "occupation", "dob", "id_number", "start_date", "end_date", "class_of_shares", "nominal_value"],
+                fields: ["name", "full_name", "nationality", "address", "occupation", "dob", "id_number", "start_date", "end_date", "class_of_shares", "no_of_shares", "nominal_value"],
                 limit_page_length: 20
             },
             callback: function(r) {
@@ -159,10 +159,11 @@ frappe.ui.form.on("Corporate Register", {
                             <th>Address</th>
                             <th>Occupation</th>
                             <th>Class of Shares</th>
+                            <th>No of Shares</th>
+                            <th>Nominal Value</th>
                             <th>ID Number</th>
                             <th>Entered as Shareholder</th>
                             <th>Ceased to be Shareholder</th>
-                            <th>Nominal Value</th>
                         </tr>
                     </thead>`;
                     r.message.forEach(function(row) {
@@ -172,10 +173,11 @@ frappe.ui.form.on("Corporate Register", {
                             <td>${row.address || ""}</td>
                             <td>${row.occupation || ""}</td>
                             <td>${row.class_of_shares || ""}</td>
+                            <td>${row.no_of_shares || ""}</td>
+                            <td>${row.nominal_value || ""}</td>
                             <td>${row.id_number || ""}</td>
                             <td>${row.start_Date || ""}</td>
                             <td>${row.end_date || ""}</td>
-                            <td>${row.nominal_value || ""}</td>
                         </tr>`;
                     });
                     corporateShareholdersHtml += "</table>";
