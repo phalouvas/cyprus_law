@@ -184,5 +184,58 @@ frappe.ui.form.on("Corporate Register", {
             }
         });
 
+        // Fetch corporate share trade dynamically
+        frappe.call({
+            method: "frappe.client.get_list",
+            args: {
+                doctype: "Corporate Share Trade",
+                filters: [
+                    ["corporate_register", "=", frm.doc.name],
+                    ["disabled", "=", 0]
+                ],
+                fields: ["name", "trade_date", "type", "dns_from_no", "dns_to_no", "no_of_shares", "from_shareholder", "from_shareholder_name", "to_shareholder", "to_shareholder_name", "nominal_value", "premium_value", "discount_value", "total_value", "notes"],
+                limit_page_length: 20
+            },
+            callback: function(r) {
+                if (r.message) {
+                    let corporateSharesHtml = "<table class='table table-bordered'>";
+                    corporateSharesHtml += `<thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>DNS From No</th>
+                            <th>DNS To No</th>
+                            <th>Number of shares</th>
+                            <th>From Shareholder</th>
+                            <th>To Shareholder</th>
+                            <th>Nominal Value</th>
+                            <th>Premium Value</th>
+                            <th>Discount Value</th>
+                            <th>Total Value</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>`;
+                    r.message.forEach(function(row) {
+                        corporateSharesHtml += `<tr>
+                            <td><a href="/app/corporate-share-trade/${row.name}">${row.trade_date || ""}</a></td>
+                            <td>${row.type || ""}</td>
+                            <td>${row.dns_from_no || ""}</td>
+                            <td>${row.dns_to_no || ""}</td>
+                            <td>${row.no_of_shares || ""}</td>
+                            <td><a href="/app/corporate-shareholder/${row.from_shareholder}">${row.from_shareholder_name || ""}</a></td>
+                            <td><a href="/app/corporate-shareholder/${row.to_shareholder}">${row.to_shareholder_name || ""}</a></td>
+                            <td>${row.nominal_value || ""}</td>
+                            <td>${row.premium_value || ""}</td>
+                            <td>${row.discount_value || ""}</td>
+                            <td>${row.total_value || ""}</td>
+                            <td>${row.notes || ""}</td>
+                        </tr>`;
+                    });
+                    corporateSharesHtml += "</table>";
+                    frm.set_df_property("shares_html", "options", corporateSharesHtml);
+                }
+            }
+        });
+
     },
 });

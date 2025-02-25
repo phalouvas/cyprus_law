@@ -22,7 +22,9 @@
   "secretaries_tab",
   "secretaries_html",
   "members_and_share_ledger_tab",
-  "shareholders_html"
+  "shareholders_html",
+  "shares_ledger_tab",
+  "shares_html"
  ],
  "fields": [
   {
@@ -110,6 +112,15 @@
   {
    "fieldname": "shareholders_html",
    "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "shares_ledger_tab",
+   "fieldtype": "Tab Break",
+   "label": "Shares Ledger"
+  },
+  {
+   "fieldname": "shares_html",
+   "fieldtype": "HTML"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -135,7 +146,7 @@
    "link_fieldname": "corporate_register"
   }
  ],
- "modified": "2025-02-25 08:37:04.028228",
+ "modified": "2025-02-25 08:53:02.217819",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Corporate Register",
