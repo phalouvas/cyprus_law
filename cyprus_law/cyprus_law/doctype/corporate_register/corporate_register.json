@@ -129,9 +129,13 @@
   {
    "link_doctype": "Corporate Shareholder",
    "link_fieldname": "corporate_register"
+  },
+  {
+   "link_doctype": "Allotment",
+   "link_fieldname": "corporate_register"
   }
  ],
- "modified": "2025-02-25 06:56:57.712123",
+ "modified": "2025-02-25 07:11:15.107371",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Corporate Register",

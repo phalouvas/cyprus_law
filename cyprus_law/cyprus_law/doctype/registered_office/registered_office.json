@@ -21,7 +21,7 @@
    "fieldtype": "Select",
    "hidden": 1,
    "label": "Naming Series",
-   "options": "RO-.YYYY."
+   "options": "RO-.YYYY.-"
   },
   {
    "fieldname": "corporate_register",
@@ -63,7 +63,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-24 17:18:38.628881",
+ "modified": "2025-02-25 07:19:38.458316",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Registered Office",
