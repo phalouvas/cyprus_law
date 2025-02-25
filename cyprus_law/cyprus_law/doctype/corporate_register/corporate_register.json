@@ -12,6 +12,7 @@
   "column_break_kmqc",
   "registration_number",
   "registration_date",
+  "disabled",
   "section_break_xzdq",
   "notes",
   "registered_offices_tab",
@@ -92,6 +93,12 @@
   {
    "fieldname": "secretaries_html",
    "fieldtype": "HTML"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -109,7 +116,7 @@
    "link_fieldname": "corporate_register"
   }
  ],
- "modified": "2025-02-24 17:52:24.399812",
+ "modified": "2025-02-25 06:38:56.932341",
  "modified_by": "Administrator",
  "module": "Cyprus Law",
  "name": "Corporate Register",
